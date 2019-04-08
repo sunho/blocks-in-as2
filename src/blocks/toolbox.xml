@@ -1,0 +1,121 @@
+<xml xmlns="http://www.w3.org/1999/xhtml" id="toolbox" style="display: none;">
+  <category name="Clipevents" colour="#5b5ba5">
+    <block type="onclipevent">
+      <field name="type">enterFrame</field>
+    </block>
+    <block type="onclipevent">
+      <field name="type">mouseDown</field>
+    </block>
+    <block type="onclipevent">
+      <field name="type">load</field>
+    </block>
+  </category>
+  <category name="Statements" colour="#5b93a5">
+    <block type="add">
+      <value name="by">
+        <block type="math_number">
+          <field name="NUM">0</field>
+        </block>
+      </value>
+    </block>
+    <block type="subtract">
+      <value name="by">
+        <block type="math_number">
+          <field name="NUM">0</field>
+        </block>
+      </value>
+    </block>
+    <block type="set">
+      <value name="value">
+        <block type="math_number">
+          <field name="NUM">0</field>
+        </block>
+      </value>
+    </block>
+    <block type="run_function">
+      <value name="target">
+        <block type="_root"></block>
+      </value>
+      <value name="function">
+        <block type="gotoandstop">
+          <value name="frame">
+            <block type="math_number">
+              <field name="NUM">0</field>
+            </block>
+          </value>
+        </block>
+      </value>
+    </block>
+    <block type="run_function">
+      <value name="target">
+        <block type="_root"></block>
+      </value>
+      <value name="function">
+        <block type="play"></block>
+      </value>
+    </block>
+    <block type="run_function">
+      <value name="target">
+        <block type="_root"></block>
+      </value>
+      <value name="function">
+        <block type="stop"></block>
+      </value>
+    </block>
+    <block type="run_function">
+      <value name="target">
+        <block type="_root"></block>
+      </value>
+      <value name="function">
+        <block type="nextframe"></block>
+      </value>
+    </block>
+  </category>
+  <category name="Movieclips and Variables" colour="#5ba55b">
+    <block type="this">
+      <value name="next">
+        <block type="variable">
+          <field name="name">_x</field>
+        </block>
+      </value>
+    </block>
+    <block type="this">
+      <value name="next">
+        <block type="variable">
+          <field name="name">_y</field>
+        </block>
+      </value>
+    </block>
+    <block type="_root"></block>
+  </category>
+  <category name="Extra" colour="#a55b5b">
+    <block type="controls_if">
+      <value name="IF0">
+        <block type="key_isdown">
+          <field name="key">Key.LEFT</field>
+        </block>
+      </value>
+    </block>
+    <block type="controls_if">
+      <value name="IF0">
+        <block type="if_condition">
+          <field name="operator">==</field>
+          <value name="left">
+            <block type="this">
+              <value name="next">
+                <block type="variable">
+                  <field name="name">_x</field>
+                </block>
+              </value>
+            </block>
+          </value>
+          <value name="right">
+            <block type="math_number">
+              <field name="NUM">0</field>
+            </block>
+          </value>
+        </block>
+      </value>
+    </block>
+  </category>
+</xml>
