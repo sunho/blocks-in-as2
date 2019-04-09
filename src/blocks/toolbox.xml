@@ -7,6 +7,44 @@
       <field name="type">mouseDown</field>
     </block>
   </category>
+  <category name="Statements" colour="#5b80a5">
+    <block type="stop">
+      <value name="obj">
+        <block type="_root"></block>
+      </value>
+    </block>
+    <block type="gotoandstop">
+      <value name="frame">
+        <block type="math_number">
+          <field name="NUM">0</field>
+        </block>
+      </value>
+      <value name="obj">
+        <block type="_root"></block>
+      </value>
+    </block>
+    <block type="subtract">
+      <value name="by">
+        <block type="math_number">
+          <field name="NUM">0</field>
+        </block>
+      </value>
+    </block>
+    <block type="add">
+      <value name="by">
+        <block type="math_number">
+          <field name="NUM">0</field>
+        </block>
+      </value>
+    </block>
+    <block type="controls_if">
+      <value name="IF0">
+        <block type="key_isdown">
+          <field name="key">Key.LEFT</field>
+        </block>
+      </value>
+    </block>
+  </category>
   <category name="Movieclips and Variables" colour="#5ba55b">
     <block type="this">
       <value name="next">
@@ -24,52 +62,7 @@
     </block>
     <block type="_root"></block>
   </category>
-  <category name="Statements" colour="#5b93a5">
-    <block type="run_function">
-      <value name="target">
-        <block type="_root"></block>
-      </value>
-      <value name="function">
-        <block type="gotoandstop">
-          <value name="frame">
-            <block type="math_number">
-              <field name="NUM">0</field>
-            </block>
-          </value>
-        </block>
-      </value>
-    </block>
-    <block type="run_function">
-      <value name="target">
-        <block type="_root"></block>
-      </value>
-      <value name="function">
-        <block type="stop"></block>
-      </value>
-    </block>
-    <block type="add">
-      <value name="by">
-        <block type="math_number">
-          <field name="NUM">0</field>
-        </block>
-      </value>
-    </block>
-    <block type="subtract">
-      <value name="by">
-        <block type="math_number">
-          <field name="NUM">0</field>
-        </block>
-      </value>
-    </block>
-  </category>
-  <category name="Extra" colour="#a55b5b">
-    <block type="controls_if">
-      <value name="IF0">
-        <block type="key_isdown">
-          <field name="key">Key.LEFT</field>
-        </block>
-      </value>
-    </block>
+  <category name="Extra" colour="#a55b6d">
     <block type="controls_if">
       <value name="IF0">
         <block type="if_condition">
@@ -96,6 +89,29 @@
         <block type="math_number">
           <field name="NUM">0</field>
         </block>
+      </value>
+    </block>
+    <block type="math_arithmetic">
+      <field name="OP">ADD</field>
+      <value name="A">
+        <block type="math_number">
+          <field name="NUM">0</field>
+        </block>
+      </value>
+      <value name="B">
+        <block type="math_number">
+          <field name="NUM">0</field>
+        </block>
+      </value>
+    </block>
+    <block type="nextframe">
+      <value name="obj">
+        <block type="_root"></block>
+      </value>
+    </block>
+    <block type="play">
+      <value name="obj">
+        <block type="_root"></block>
       </value>
     </block>
   </category>

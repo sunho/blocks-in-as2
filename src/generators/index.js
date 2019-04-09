@@ -15,7 +15,8 @@ generators['key_isdown'] = (block) => {
 
 generators['gotoandstop'] = (block) => {
     let frame = Blockly.JavaScript.valueToCode(block, 'frame', Blockly.JavaScript.ORDER_ATOMIC);
-    return [`gotoAndStop(${frame})`, Blockly.JavaScript.ORDER_ATOMIC];
+    let obj = Blockly.JavaScript.valueToCode(block, 'obj', Blockly.JavaScript.ORDER_ATOMIC);
+    return `${obj}.gotoAndStop(${frame});\n`;
 };
 
 generators['set'] = (block) => {
@@ -45,11 +46,13 @@ generators['this'] = (block) => {
 };
 
 generators['stop'] = (block) => {
-    return [`stop()`, Blockly.JavaScript.ORDER_ATOMIC];
+    let obj = Blockly.JavaScript.valueToCode(block, 'obj', Blockly.JavaScript.ORDER_ATOMIC);
+    return `${obj}.stop();\n`;
 };
 
 generators['play'] = (block) => {
-    return [`play()`, Blockly.JavaScript.ORDER_ATOMIC];
+    let obj = Blockly.JavaScript.valueToCode(block, 'obj', Blockly.JavaScript.ORDER_ATOMIC);
+    return `${obj}.play();\n`;
 };
 
 generators['_root'] = (block) => {
@@ -83,7 +86,8 @@ generators['subtract'] = (block) => {
 };
 
 generators['nextframe'] = (block) => {
-    return [`nextFrame()`, Blockly.JavaScript.ORDER_ATOMIC];
+    let obj = Blockly.JavaScript.valueToCode(block, 'obj', Blockly.JavaScript.ORDER_ATOMIC);
+    return `${obj}.nextFrame();\n`;
 };
 
 generators['if_condition'] = (block) => {

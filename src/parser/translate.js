@@ -125,11 +125,9 @@ function statementToBlock(workspace, statement) {
             return block;
         }
         case 'funcStatement': {
-            const block = workspace.newBlock('run_function');
-            const target = variableToBlock(workspace, statement.func.variable);
-            const func = functionCallToBlock(workspace, statement.func);
-            connect(block, 'target', target);
-            connect(block, 'function', func);
+            const block = functionCallToBlock(workspace, statement.func);
+            const obj = variableToBlock(workspace, statement.func.variable);
+            connect(block, 'obj', obj);
             return block;
         }
         case 'addStatement': {

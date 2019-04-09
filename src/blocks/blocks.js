@@ -32,13 +32,20 @@ Blockly.Blocks['key_isdown'] = {
 
 Blockly.Blocks['gotoandstop'] = {
   init: function() {
+    this.appendDummyInput()
+        .appendField("gotoAndStop");
     this.appendValueInput("frame")
         .setCheck("Number")
         .setAlign(Blockly.ALIGN_RIGHT)
-        .appendField("gotoAndStop at frame");
-    this.setInputsInline(true);
-    this.setOutput(true, "function");
-    this.setColour(290);
+        .appendField(" at frame");
+    this.appendValueInput("obj")
+        .setCheck("obj")
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField("of");
+    this.setInputsInline(false);
+    this.setPreviousStatement(true, "statement");
+    this.setNextStatement(true, "statement");
+    this.setColour(210);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -91,9 +98,13 @@ Blockly.Blocks['stop'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("stop");
-    this.setInputsInline(true);
-    this.setOutput(true, "function");
-    this.setColour(290);
+    this.appendValueInput("obj")
+        .setCheck("obj")
+        .setAlign(Blockly.ALIGN_RIGHT);
+    this.setInputsInline(false);
+    this.setPreviousStatement(true, "statement");
+    this.setNextStatement(true, "statement");
+    this.setColour(210);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -103,9 +114,12 @@ Blockly.Blocks['play'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("play");
-    this.setInputsInline(true);
-    this.setOutput(true, "function");
-    this.setColour(290);
+    this.appendValueInput("obj")
+        .setCheck("obj");
+    this.setInputsInline(false);
+    this.setPreviousStatement(true, "statement");
+    this.setNextStatement(true, "statement");
+    this.setColour(210);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -164,8 +178,13 @@ Blockly.Blocks['nextframe'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("nextFrame");
-    this.setOutput(true, "function");
-    this.setColour(290);
+    this.appendValueInput("obj")
+        .setCheck("obj")
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField("");
+    this.setPreviousStatement(true, "statement");
+    this.setNextStatement(true, "statement");
+    this.setColour(210);
  this.setTooltip("");
  this.setHelpUrl("");
   }
