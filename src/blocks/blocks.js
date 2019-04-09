@@ -65,6 +65,7 @@ Blockly.Blocks['variable'] = {
   init: function() {
     this.appendValueInput("next")
         .setCheck("obj")
+        .appendField("'s variable")
         .appendField(new Blockly.FieldTextInput("variable name"), "name");
     this.setOutput(true, "obj");
     this.setColour(120);
@@ -77,7 +78,7 @@ Blockly.Blocks['this'] = {
   init: function() {
     this.appendValueInput("next")
         .setCheck("obj")
-        .appendField("this");
+        .appendField("this movieclip");
     this.setInputsInline(false);
     this.setOutput(true, "obj");
     this.setColour(120);
@@ -114,7 +115,7 @@ Blockly.Blocks['_root'] = {
   init: function() {
     this.appendValueInput("next")
         .setCheck("obj")
-        .appendField("_root");
+        .appendField("_root movieclip");
     this.setInputsInline(false);
     this.setOutput(true, "obj");
     this.setColour(120);
@@ -132,7 +133,7 @@ Blockly.Blocks['run_function'] = {
     this.appendValueInput("function")
         .setCheck("function")
         .setAlign(Blockly.ALIGN_RIGHT)
-        .appendField(".");
+        .appendField("'s function");
     this.setInputsInline(true);
     this.setPreviousStatement(true, "statement");
     this.setNextStatement(true, "statement");
