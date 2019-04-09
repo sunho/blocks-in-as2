@@ -114,7 +114,7 @@ var grammar = {
     {"name": "Condition", "symbols": ["Exp"], "postprocess": id},
     {"name": "Condition$string$1", "symbols": [{"literal":"="}, {"literal":"="}], "postprocess": function joiner(d) {return d.join('');}},
     {"name": "Condition", "symbols": ["Exp", "_", "Condition$string$1", "_", "Exp"], "postprocess": function(d) {return {'type': 'compare', 'left': d[0], 'operator': '==', 'right': d[4]}; }},
-    {"name": "Condition$string$2", "symbols": [{"literal":"<"}, {"literal":"="}], "postprocess": function joiner(d) {return d.join('');}},
+    {"name": "Condition$string$2", "symbols": [{"literal":">"}, {"literal":"="}], "postprocess": function joiner(d) {return d.join('');}},
     {"name": "Condition", "symbols": ["Exp", "_", "Condition$string$2", "_", "Exp"], "postprocess": function(d) {return {'type': 'compare', 'left': d[0], 'operator': '>=', 'right': d[4]}; }},
     {"name": "Condition$string$3", "symbols": [{"literal":"<"}, {"literal":"="}], "postprocess": function joiner(d) {return d.join('');}},
     {"name": "Condition", "symbols": ["Exp", "_", "Condition$string$3", "_", "Exp"], "postprocess": function(d) {return {'type': 'compare', 'left': d[0], 'operator': '<=', 'right': d[4]}; }},

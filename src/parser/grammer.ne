@@ -25,7 +25,7 @@ FunctionCall -> Var "." Name "(" Args ")" {% function(d) {return {'type': 'funct
 
 Condition -> Exp {% id %}
     | Exp _ "==" _ Exp {% function(d) {return {'type': 'compare', 'left': d[0], 'operator': '==', 'right': d[4]}; } %}
-    | Exp _ "<=" _ Exp {% function(d) {return {'type': 'compare', 'left': d[0], 'operator': '>=', 'right': d[4]}; } %}
+    | Exp _ ">=" _ Exp {% function(d) {return {'type': 'compare', 'left': d[0], 'operator': '>=', 'right': d[4]}; } %}
     | Exp _ "<=" _ Exp {% function(d) {return {'type': 'compare', 'left': d[0], 'operator': '<=', 'right': d[4]}; } %}
     | Exp _ ">" _ Exp {% function(d) {return {'type': 'compare', 'left': d[0], 'operator': '>', 'right': d[4]}; } %}
     | Exp _ "<" _ Exp {% function(d) {return {'type': 'compare', 'left': d[0], 'operator': '<', 'right': d[4]}; } %}
