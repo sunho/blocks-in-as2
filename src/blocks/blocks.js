@@ -45,7 +45,7 @@ Blockly.Blocks['gotoandstop'] = {
     this.setInputsInline(false);
     this.setPreviousStatement(true, "statement");
     this.setNextStatement(true, "statement");
-    this.setColour(210);
+    this.setColour(290);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -104,7 +104,7 @@ Blockly.Blocks['stop'] = {
     this.setInputsInline(false);
     this.setPreviousStatement(true, "statement");
     this.setNextStatement(true, "statement");
-    this.setColour(210);
+    this.setColour(290);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -119,7 +119,7 @@ Blockly.Blocks['play'] = {
     this.setInputsInline(false);
     this.setPreviousStatement(true, "statement");
     this.setNextStatement(true, "statement");
-    this.setColour(210);
+    this.setColour(290);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -184,7 +184,7 @@ Blockly.Blocks['nextframe'] = {
         .appendField("");
     this.setPreviousStatement(true, "statement");
     this.setNextStatement(true, "statement");
-    this.setColour(210);
+    this.setColour(290);
  this.setTooltip("");
  this.setHelpUrl("");
   }
