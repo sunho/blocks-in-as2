@@ -3,7 +3,7 @@ import * as grammer from './grammer';
 
 export function parse(str) {
     const parser = new nearley.Parser(nearley.Grammar.fromCompiled(grammer));
-    str = str.replace('\n\r', '\n').replace('\r', '\n');
+    str = str.replace(/\r/g, '');
     str.split('\n').forEach((sentence) => {
         parser.feed(sentence);
     });
