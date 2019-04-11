@@ -3,10 +3,10 @@ import Blockly from 'node-blockly/browser';
 Blockly.Blocks['onclipevent'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("When the movie clip");
+        .appendField("Run the actions inside");
     this.appendStatementInput("run")
         .setCheck("statement")
-        .appendField(new Blockly.FieldDropdown([["enter frame","enterFrame"], ["pressed by mouse","mouseDown"], ["appear","load"]]), "type");
+        .appendField(new Blockly.FieldDropdown([["regularly","enterFrame"], ["when the screen is clicked","mouseDown"], ["appear","load"]]), "type");
     this.setInputsInline(false);
     this.setPreviousStatement(true, "onclipevent");
     this.setNextStatement(true, "onclipevent");
