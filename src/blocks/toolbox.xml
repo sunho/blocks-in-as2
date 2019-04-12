@@ -7,7 +7,7 @@
       <field name="type">mouseDown</field>
     </block>
   </category>
-  <category name="Statements" colour="#5b80a5">
+  <category name="Actions" colour="#5b80a5">
     <block type="stop">
       <value name="obj">
         <block type="_root"></block>
