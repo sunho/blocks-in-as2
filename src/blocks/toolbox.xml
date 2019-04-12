@@ -45,7 +45,7 @@
       </value>
     </block>
   </category>
-  <category name="Movieclips and Variables" colour="#5ba55b">
+  <category name="Variables" colour="#5ba55b">
     <block type="this">
       <value name="next">
         <block type="variable">
@@ -60,9 +60,8 @@
         </block>
       </value>
     </block>
-    <block type="_root"></block>
   </category>
-  <category name="Extra" colour="#a55b6d">
+  <category name="Extra">
     <block type="controls_if">
       <value name="IF0">
         <block type="if_condition">
