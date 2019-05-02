@@ -84,7 +84,8 @@ Blockly.Blocks['stop'] = {
         .appendField("stop");
     this.appendValueInput("obj")
         .setCheck("obj")
-        .setAlign(Blockly.ALIGN_RIGHT);
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField("animation of");
     this.setPreviousStatement(true, "statement");
     this.setNextStatement(true, "statement");
     this.setColour(290);
@@ -98,7 +99,8 @@ Blockly.Blocks['play'] = {
     this.appendDummyInput()
         .appendField("play");
     this.appendValueInput("obj")
-        .setCheck("obj");
+        .setCheck("obj")
+        .appendField("animation of");
     this.setPreviousStatement(true, "statement");
     this.setNextStatement(true, "statement");
     this.setColour(290);
