@@ -21,7 +21,7 @@ for (let key in generators) {
 
 hljs.registerLanguage('actionscript', (h) => {
   const out = actionscript(h);  
-  out.keywords.keyword += ' _root _parent onClipEvent'
+  out.keywords.keyword += ' _root _parent onClipEvent on'
   return out;
 });
 

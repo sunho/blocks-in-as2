@@ -102,6 +102,8 @@ var grammar = {
     {"name": "Statement", "symbols": ["FuncStatement", "_"], "postprocess": function(d) { return d[0]; }},
     {"name": "OnClipEventStatement$string$1", "symbols": [{"literal":"o"}, {"literal":"n"}, {"literal":"C"}, {"literal":"l"}, {"literal":"i"}, {"literal":"p"}, {"literal":"E"}, {"literal":"v"}, {"literal":"e"}, {"literal":"n"}, {"literal":"t"}], "postprocess": function joiner(d) {return d.join('');}},
     {"name": "OnClipEventStatement", "symbols": ["OnClipEventStatement$string$1", "_", {"literal":"("}, "_", "Name", "_", {"literal":")"}, "_", {"literal":"{"}, "Statements", {"literal":"}"}], "postprocess": function(d) { return {'type': 'onClipEventStatement', 'event': d[4], 'statements': d[9]}; }},
+    {"name": "OnClipEventStatement$string$2", "symbols": [{"literal":"o"}, {"literal":"n"}], "postprocess": function joiner(d) {return d.join('');}},
+    {"name": "OnClipEventStatement", "symbols": ["OnClipEventStatement$string$2", "_", {"literal":"("}, "_", "Name", "_", {"literal":")"}, "_", {"literal":"{"}, "Statements", {"literal":"}"}], "postprocess": function(d) { return {'type': 'onClipEventStatement', 'event': d[4], 'statements': d[9]}; }},
     {"name": "IfStatement$string$1", "symbols": [{"literal":"i"}, {"literal":"f"}], "postprocess": function joiner(d) {return d.join('');}},
     {"name": "IfStatement", "symbols": ["IfStatement$string$1", "_", {"literal":"("}, "_", "Condition", "_", {"literal":")"}, "_", {"literal":"{"}, "Statements", {"literal":"}"}], "postprocess": function(d) { return {'type': 'ifStatement', 'condition': d[4], 'statements': d[9]}; }},
     {"name": "SubtractStatement$string$1", "symbols": [{"literal":"-"}, {"literal":"="}], "postprocess": function joiner(d) {return d.join('');}},

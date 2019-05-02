@@ -4,8 +4,12 @@ let generators = {};
 
 generators['onclipevent'] = (block) => {
     let type = block.getFieldValue('type');
+    let on = 'onClipEvent';
+    if (type === 'press' || type === 'rollOver') {
+        on = 'on';
+    }
     let code = Blockly.JavaScript.statementToCode(block, 'run');
-    return `onClipEvent(${type}) {\n${code}}\n`
+    return `${on}(${type}) {\n${code}}\n`
 };
 
 generators['key_isdown'] = (block) => {

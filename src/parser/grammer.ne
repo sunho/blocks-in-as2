@@ -2,14 +2,16 @@
 
 Statements -> _ Statement:* {% function(d) { return d[1]; } %}
 
-Statement ->  OnClipEventStatement _ {% function(d) { return d[0]; } %}
+Statement -> OnClipEventStatement _ {% function(d) { return d[0]; } %}
     | IfStatement _ {% function(d) { return d[0]; } %}
     | SubtractStatement _ {% function(d) { return d[0]; } %}
     | AddStatement _ {% function(d) { return d[0]; } %}
     | SetStatement _ {% function(d) { return d[0]; } %}
     | FuncStatement _ {% function(d) { return d[0]; } %}
 
-OnClipEventStatement -> "onClipEvent" _ "(" _ Name _ ")" _ "{" Statements "}" {% function(d) { return {'type': 'onClipEventStatement', 'event': d[4], 'statements': d[9]}; } %}
+OnClipEventStatement -> "onClipEvent" _ "(" _ Name _ ")" _ "{" Statements "}" {% function(d) { return {'type': 'onClipEventStatement', 'event': d[4], 'statements': d[9]}; } %} |
+                        "on" _ "(" _ Name _ ")" _ "{" Statements "}" {% function(d) { return {'type': 'onClipEventStatement', 'event': d[4], 'statements': d[9]}; } %}
+                    
 
 IfStatement -> "if" _ "(" _ Condition _ ")" _ "{" Statements "}" {% function(d) { return {'type': 'ifStatement', 'condition': d[4], 'statements': d[9]}; } %}
 

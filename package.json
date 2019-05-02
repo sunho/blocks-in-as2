@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server --mode development --open",
     "build": "webpack -p",
-    "start": "PORT=1444 node server.js"
+    "start": "PORT=1444 node server.js",
+    "grammer": "nearleyc ./src/parser/grammer.ne -o ./src/parser/grammer.js"
   },
   "author": "",
   "license": "MIT",

@@ -4,13 +4,16 @@
       <field name="type">enterFrame</field>
     </block>
     <block type="onclipevent">
-      <field name="type">mouseDown</field>
+      <field name="type">press</field>
+    </block>
+    <block type="onclipevent">
+      <field name="type">rollOver</field>
     </block>
   </category>
-  <category name="Actions" colour="#5b80a5">
+  <category name="Actions" colour="#5ba5a5">
     <block type="stop">
       <value name="obj">
-        <block type="_root"></block>
+        <block type="this"></block>
       </value>
     </block>
     <block type="gotoandstop">
@@ -23,94 +26,15 @@
         <block type="_root"></block>
       </value>
     </block>
-    <block type="subtract">
-      <value name="by">
-        <block type="math_number">
-          <field name="NUM">0</field>
-        </block>
-      </value>
-    </block>
-    <block type="add">
-      <value name="by">
-        <block type="math_number">
-          <field name="NUM">0</field>
-        </block>
-      </value>
-    </block>
-    <block type="controls_if">
-      <value name="IF0">
-        <block type="key_isdown">
-          <field name="key">Key.LEFT</field>
-        </block>
-      </value>
-    </block>
-  </category>
-  <category name="Variables" colour="#5ba55b">
-    <block type="this">
-      <value name="next">
-        <block type="variable">
-          <field name="name">_x</field>
-        </block>
-      </value>
-    </block>
-    <block type="this">
-      <value name="next">
-        <block type="variable">
-          <field name="name">_y</field>
-        </block>
-      </value>
-    </block>
-  </category>
-  <category name="Extra">
-    <block type="controls_if">
-      <value name="IF0">
-        <block type="if_condition">
-          <field name="operator">==</field>
-          <value name="left">
-            <block type="this">
-              <value name="next">
-                <block type="variable">
-                  <field name="name">_x</field>
-                </block>
-              </value>
-            </block>
-          </value>
-          <value name="right">
-            <block type="math_number">
-              <field name="NUM">0</field>
-            </block>
-          </value>
-        </block>
-      </value>
-    </block>
-    <block type="set">
-      <value name="value">
-        <block type="math_number">
-          <field name="NUM">0</field>
-        </block>
-      </value>
-    </block>
-    <block type="math_arithmetic">
-      <field name="OP">ADD</field>
-      <value name="A">
-        <block type="math_number">
-          <field name="NUM">0</field>
-        </block>
-      </value>
-      <value name="B">
-        <block type="math_number">
-          <field name="NUM">0</field>
-        </block>
-      </value>
-    </block>
-    <block type="nextframe">
-      <value name="obj">
-        <block type="_root"></block>
-      </value>
-    </block>
     <block type="play">
       <value name="obj">
-        <block type="_root"></block>
+        <block type="_root">
+          <value name="next">
+            <block type="variable">
+              <field name="name">movieclip name</field>
+            </block>
+          </value>
+        </block>
       </value>
     </block>
   </category>

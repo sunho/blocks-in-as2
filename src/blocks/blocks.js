@@ -6,25 +6,11 @@ Blockly.Blocks['onclipevent'] = {
         .appendField("Run the actions inside");
     this.appendStatementInput("run")
         .setCheck("statement")
-        .appendField(new Blockly.FieldDropdown([["regularly","enterFrame"], ["when the screen is clicked","mouseDown"], ["appear","load"]]), "type");
+        .appendField(new Blockly.FieldDropdown([["regularly","enterFrame"], ["when clicked","press"], ["when mouse is over","rollOver"]]), "type");
     this.setInputsInline(false);
     this.setPreviousStatement(true, "onclipevent");
     this.setNextStatement(true, "onclipevent");
     this.setColour(230);
- this.setTooltip("enterFrame");
- this.setHelpUrl("");
-  }
-};
-
-Blockly.Blocks['key_isdown'] = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField("key")
-        .appendField(new Blockly.FieldDropdown([["LEFT","Key.LEFT"], ["RIGHT","Key.RIGHT"], ["DOWN","Key.DOWN"], ["UP","Key.UP"], ["SPACE","Key.SPACE"]]), "key")
-        .appendField("is down");
-    this.setInputsInline(true);
-    this.setOutput(true, "Boolean");
-    this.setColour(210);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -72,7 +58,6 @@ Blockly.Blocks['variable'] = {
   init: function() {
     this.appendValueInput("next")
         .setCheck("obj")
-        .appendField("'s variable")
         .appendField(new Blockly.FieldTextInput("variable name"), "name");
     this.setOutput(true, "obj");
     this.setColour(120);
@@ -86,7 +71,6 @@ Blockly.Blocks['this'] = {
     this.appendValueInput("next")
         .setCheck("obj")
         .appendField("this movieclip");
-    this.setInputsInline(false);
     this.setOutput(true, "obj");
     this.setColour(120);
  this.setTooltip("");
@@ -101,7 +85,6 @@ Blockly.Blocks['stop'] = {
     this.appendValueInput("obj")
         .setCheck("obj")
         .setAlign(Blockly.ALIGN_RIGHT);
-    this.setInputsInline(false);
     this.setPreviousStatement(true, "statement");
     this.setNextStatement(true, "statement");
     this.setColour(290);
@@ -116,7 +99,6 @@ Blockly.Blocks['play'] = {
         .appendField("play");
     this.appendValueInput("obj")
         .setCheck("obj");
-    this.setInputsInline(false);
     this.setPreviousStatement(true, "statement");
     this.setNextStatement(true, "statement");
     this.setColour(290);
@@ -129,29 +111,9 @@ Blockly.Blocks['_root'] = {
   init: function() {
     this.appendValueInput("next")
         .setCheck("obj")
-        .appendField("_root movieclip");
-    this.setInputsInline(false);
+        .appendField("_root");
     this.setOutput(true, "obj");
     this.setColour(120);
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
-
-Blockly.Blocks['run_function'] = {
-  init: function() {
-    this.appendValueInput("target")
-        .setCheck("obj")
-        .setAlign(Blockly.ALIGN_RIGHT)
-        .appendField("run");
-    this.appendValueInput("function")
-        .setCheck("function")
-        .setAlign(Blockly.ALIGN_RIGHT)
-        .appendField("'s function");
-    this.setInputsInline(true);
-    this.setPreviousStatement(true, "statement");
-    this.setNextStatement(true, "statement");
-    this.setColour(210);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -180,8 +142,7 @@ Blockly.Blocks['nextframe'] = {
         .appendField("nextFrame");
     this.appendValueInput("obj")
         .setCheck("obj")
-        .setAlign(Blockly.ALIGN_RIGHT)
-        .appendField("");
+        .setAlign(Blockly.ALIGN_RIGHT);
     this.setPreviousStatement(true, "statement");
     this.setNextStatement(true, "statement");
     this.setColour(290);
@@ -198,6 +159,7 @@ Blockly.Blocks['if_condition'] = {
         .appendField(new Blockly.FieldDropdown([["is equal to","=="], ["is more than or equal to",">="], ["is less than or equal to","<="], ["is more than",">"], ["is less than","<"], ["is not equal to","!="]]), "operator");
     this.appendValueInput("right")
         .setCheck(null);
+    this.setInputsInline(true);
     this.setOutput(true, "Boolean");
     this.setColour(210);
  this.setTooltip("");
@@ -217,6 +179,23 @@ Blockly.Blocks['subtract'] = {
     this.setPreviousStatement(true, "statement");
     this.setNextStatement(true, "statement");
     this.setColour(210);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['print'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("print");
+    this.appendValueInput("content")
+        .setCheck(null);
+    this.appendDummyInput()
+        .appendField("to the console");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, "statement");
+    this.setNextStatement(true, "statement");
+    this.setColour(290);
  this.setTooltip("");
  this.setHelpUrl("");
   }
