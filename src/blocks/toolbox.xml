@@ -26,5 +26,16 @@
         <block type="_root"></block>
       </value>
     </block>
+    <block type="play">
+      <value name="obj">
+        <block type="_root">
+          <value name="next">
+            <block type="variable">
+              <field name="name">movieclip_name</field>
+            </block>
+          </value>
+        </block>
+      </value>
+    </block>
   </category>
 </xml>
