@@ -10,7 +10,7 @@
       <field name="type">rollOver</field>
     </block>
   </category>
-  <category name="Actions" colour="#5ba5a5">
+  <category name="Action" colour="#935ba5">
     <block type="stop">
       <value name="obj">
         <block type="this"></block>
@@ -34,6 +34,28 @@
               <field name="name">movieclip_name</field>
             </block>
           </value>
+        </block>
+      </value>
+    </block>
+    <block type="move">
+      <field name="type">LEFT</field>
+      <field name="number">0</field>
+      <value name="obj">
+        <block type="_root">
+          <value name="next">
+            <block type="variable">
+              <field name="name">movieclip_name</field>
+            </block>
+          </value>
+        </block>
+      </value>
+    </block>
+  </category>
+  <category name="Logic" colour="#5b93a5">
+    <block type="controls_if">
+      <value name="IF0">
+        <block type="key_isdown">
+          <field name="key">Key.SPACE</field>
         </block>
       </value>
     </block>

@@ -132,7 +132,7 @@ Blockly.Blocks['add'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, "statement");
     this.setNextStatement(true, "statement");
-    this.setColour(210);
+    this.setColour(290);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -180,7 +180,7 @@ Blockly.Blocks['subtract'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, "statement");
     this.setNextStatement(true, "statement");
-    this.setColour(210);
+    this.setColour(290);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -197,6 +197,38 @@ Blockly.Blocks['print'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, "statement");
     this.setNextStatement(true, "statement");
+    this.setColour(290);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['key_isdown'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldDropdown([["left arrow","Key.LEFT"], ["right arrow","Key.RIGHT"], ["up arrow","Key.UP"], ["down arrow","Key.DOWN"], ["space bar","Key.SPACE"]]), "key")
+        .appendField("key is pressed");
+    this.setOutput(true, "Boolean");
+    this.setColour(210);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['move'] = {
+  init: function() {
+    this.appendValueInput("obj")
+        .setCheck(null)
+        .appendField("Move");
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldDropdown([["to the left","LEFT"], ["to the right","RIGHT"], ["to the top","TOP"], ["to the bottom","BOTTOM"]]), "type");
+    this.appendDummyInput()
+        .appendField(" by")
+        .appendField(new Blockly.FieldNumber(0), "number")
+        .appendField("px");
+    this.setInputsInline(false);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
     this.setColour(290);
  this.setTooltip("");
  this.setHelpUrl("");
