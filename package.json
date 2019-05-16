@@ -14,7 +14,8 @@
   "license": "MIT",
   "dependencies": {
     "express": "^4.16.3",
-    "express-favicon": "^2.0.1"
+    "express-favicon": "^2.0.1",
+    "pako": "^1.0.10"
   },
   "devDependencies": {
     "highlight.js": "^9.15.6",

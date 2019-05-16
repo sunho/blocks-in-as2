@@ -11,19 +11,19 @@
     </block>
   </category>
   <category name="Action" colour="#935ba5">
-    <block type="stop">
-      <value name="obj">
-        <block type="this"></block>
-      </value>
-    </block>
     <block type="gotoandstop">
+      <value name="obj">
+        <block type="_root"></block>
+      </value>
       <value name="frame">
         <block type="math_number">
           <field name="NUM">0</field>
         </block>
       </value>
+    </block>
+    <block type="stop">
       <value name="obj">
-        <block type="_root"></block>
+        <block type="this"></block>
       </value>
     </block>
     <block type="play">
@@ -39,7 +39,6 @@
     </block>
     <block type="move">
       <field name="type">LEFT</field>
-      <field name="number">0</field>
       <value name="obj">
         <block type="_root">
           <value name="next">
@@ -49,13 +48,18 @@
           </value>
         </block>
       </value>
+      <value name="number">
+        <block type="math_number">
+          <field name="NUM">0</field>
+        </block>
+      </value>
     </block>
   </category>
   <category name="Logic" colour="#5b93a5">
     <block type="controls_if">
       <value name="IF0">
         <block type="key_isdown">
-          <field name="key">Key.SPACE</field>
+          <field name="key">Key.LEFT</field>
         </block>
       </value>
     </block>

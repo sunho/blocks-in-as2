@@ -101,4 +101,29 @@ generators['if_condition'] = (block) => {
     return [`${left} ${operator} ${right}`, Blockly.JavaScript.ORDER_NONE];
 };
 
+generators['move'] = (block) => {
+    let obj = Blockly.JavaScript.valueToCode(block, 'obj', Blockly.JavaScript.ORDER_ATOMIC);
+    let type = block.getFieldValue('type');
+    let vari = '';
+    switch(type) {
+        case 'LEFT':
+            vari = '_x -= ';
+            break;
+        case 'RIGHT':
+            vari = '_x += ';
+            break;
+        case 'TOP':
+            vari = '_y -= ';
+            break;
+        case 'BOTTOM':
+            vari = '_y += ';
+            break;
+        default:
+            throw new Error('???');
+    }
+    let number = Blockly.JavaScript.valueToCode(block, 'number', Blockly.JavaScript.ORDER_ATOMIC);
+    return `${obj}.${vari} ${number}; \n`;
+};
+
+
 export default generators;

@@ -3,7 +3,7 @@ import './blocks/blocks';
 
 import toolbox from './blocks/toolbox.xml';
 import generators from './generators';
-import { parse, translate } from './parser';
+import * as pako from 'pako';
 
 import hljs from 'highlight.js/lib/highlight';
 import actionscript from 'highlight.js/lib/languages/actionscript';
@@ -27,7 +27,9 @@ hljs.registerLanguage('actionscript', (h) => {
 
 const onChange = () => {
   const element = document.getElementById('text');
-  element.textContent = Blockly.JavaScript.workspaceToCode(workspace );
+  const xml = Blockly.Xml.workspaceToDom(workspace);
+  const text = btoa(Blockly.Xml.domToPrettyText(xml), { to: 'string' });
+  element.textContent =  "/*" + text + "*/\n" + Blockly.JavaScript.workspaceToCode(workspace);
   hljs.highlightBlock(element);
 }
 
@@ -81,10 +83,12 @@ document.getElementById('import').addEventListener('click', () => {
   navigator.clipboard.readText()
     .then(text => {
       const code = backupCode();
+      const pat = /\/\*(.*?)\*\//g;
+      var match = pat.exec(text);
       try {
-        const result = parse(text);
         workspace.clear();
-        translate(workspace, result);
+        var dom = Blockly.Xml.textToDom(atob(match[1]));
+        Blockly.Xml.domToWorkspace(workspace, dom);
         render();
       } catch (e) {
         workspace.clear();
@@ -95,6 +99,7 @@ document.getElementById('import').addEventListener('click', () => {
   .catch(() => {
     alert('clipboard permission is requiured');
   });
+
 });
 
 document.addEventListener("DOMContentLoaded", () => {

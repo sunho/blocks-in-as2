@@ -20,15 +20,14 @@ Blockly.Blocks['gotoandstop'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("gotoAndStop");
+    this.appendValueInput("obj")
+        .setCheck("obj")
+        .setAlign(Blockly.ALIGN_RIGHT);
     this.appendValueInput("frame")
         .setCheck("Number")
         .setAlign(Blockly.ALIGN_RIGHT)
         .appendField(" at frame");
-    this.appendValueInput("obj")
-        .setCheck("obj")
-        .setAlign(Blockly.ALIGN_RIGHT)
-        .appendField("of");
-    this.setInputsInline(false);
+    this.setInputsInline(true);
     this.setPreviousStatement(true, "statement");
     this.setNextStatement(true, "statement");
     this.setColour(290);
@@ -80,12 +79,13 @@ Blockly.Blocks['this'] = {
 
 Blockly.Blocks['stop'] = {
   init: function() {
-    this.appendDummyInput()
-        .appendField("stop");
     this.appendValueInput("obj")
         .setCheck("obj")
         .setAlign(Blockly.ALIGN_RIGHT)
-        .appendField("animation of");
+        .appendField("stop");
+    this.appendDummyInput()
+        .appendField("'s animation");
+    this.setInputsInline(true);
     this.setPreviousStatement(true, "statement");
     this.setNextStatement(true, "statement");
     this.setColour(290);
@@ -96,11 +96,12 @@ Blockly.Blocks['stop'] = {
 
 Blockly.Blocks['play'] = {
   init: function() {
-    this.appendDummyInput()
-        .appendField("play");
     this.appendValueInput("obj")
         .setCheck("obj")
-        .appendField("animation of");
+        .appendField("play");
+    this.appendDummyInput()
+        .appendField("'s animation");
+    this.setInputsInline(true);
     this.setPreviousStatement(true, "statement");
     this.setNextStatement(true, "statement");
     this.setColour(290);
@@ -219,14 +220,15 @@ Blockly.Blocks['move'] = {
   init: function() {
     this.appendValueInput("obj")
         .setCheck(null)
-        .appendField("Move");
+        .appendField("move");
     this.appendDummyInput()
         .appendField(new Blockly.FieldDropdown([["to the left","LEFT"], ["to the right","RIGHT"], ["to the top","TOP"], ["to the bottom","BOTTOM"]]), "type");
+    this.appendValueInput("number")
+        .setCheck(null)
+        .appendField(" by");
     this.appendDummyInput()
-        .appendField(" by")
-        .appendField(new Blockly.FieldNumber(0), "number")
         .appendField("px");
-    this.setInputsInline(false);
+    this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(290);
