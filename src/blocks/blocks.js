@@ -236,3 +236,24 @@ Blockly.Blocks['move'] = {
  this.setHelpUrl("");
   }
 };
+
+Blockly.Blocks['hittest'] = {
+  init: function() {
+    this.appendValueInput("left")
+        .setCheck(null)
+        .appendField(new Blockly.FieldDropdown([["left side","LEFT"], ["right side","RIGHT"], ["top side","TOP"], ["bottom side","BOTTOM"], ["any side","ANY"]]), "side")
+        .appendField("of");
+    this.appendValueInput("right")
+        .setCheck(null)
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField("and");
+    this.appendDummyInput()
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField("are in contact");
+    this.setInputsInline(false);
+    this.setOutput(true, "Boolean");
+    this.setColour(210);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};

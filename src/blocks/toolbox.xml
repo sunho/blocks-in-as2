@@ -63,5 +63,24 @@
         </block>
       </value>
     </block>
+    <block type="controls_if">
+      <value name="IF0">
+        <block type="hittest">
+          <field name="side">ANY</field>
+          <value name="left">
+            <block type="_root">
+              <value name="next">
+                <block type="variable">
+                  <field name="name">movieclip_name</field>
+                </block>
+              </value>
+            </block>
+          </value>
+          <value name="right">
+            <block type="this"></block>
+          </value>
+        </block>
+      </value>
+    </block>
   </category>
 </xml>
