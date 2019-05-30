@@ -129,30 +129,7 @@ generators['hittest'] = (block) => {
     let left = Blockly.JavaScript.valueToCode(block, 'left', Blockly.JavaScript.ORDER_ATOMIC);
     let right = Blockly.JavaScript.valueToCode(block, 'right', Blockly.JavaScript.ORDER_ATOMIC);
     let type = block.getFieldValue('side');
-    let out = '';
-    const width = `${left}._width / 2`;
-    const height = `${left}._height / 2`;
-    switch(type) {
-        case 'LEFT':
-            out = `${right}.hitTest(${left}._x - ${width}, ${left}._y - ${height}, true) && ${right}.hitTest(${left}._x - ${width}, ${left}._y , true) && ${right}.hitTest(${left}._x - ${width}, ${left}._y + ${height}, true)`;
-            break;
-        case 'RIGHT':
-            out = `${right}.hitTest(${left}._x + ${width}, ${left}._y - ${height}, true) && ${right}.hitTest(${left}._x + ${width}, ${left}._y , true) && ${right}.hitTest(${left}._x + ${width}, ${left}._y + ${height}, true)`;
-            break;
-        case 'TOP':
-            out = `${right}.hitTest(${left}._x - ${width}, ${left}._y - ${height}, true) && ${right}.hitTest(${left}._x, ${left}._y - ${height}, true) && ${right}.hitTest(${left}._x + ${width}, ${left}._y - ${height}, true)`;
-            break;
-        case 'BOTTOM':
-            out = `${right}.hitTest(${left}._x - ${width}, ${left}._y + ${height}, true) && ${right}.hitTest(${left}._x, ${left}._y + ${height}, true) && ${right}.hitTest(${left}._x + ${width}, ${left}._y + ${height}, true)`;
-            break;
-        case 'ANY':
-            out = `${right}.hitTest(${left})`
-            break;
-        default:
-            throw new Error('???');
-    }
-    
-    return [out, Blockly.JavaScript.ORDER_NONE];
+    return [`${left}.hitTest(${right})`, Blockly.JavaScript.ORDER_NONE];
 };
 
 
