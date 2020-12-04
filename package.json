@@ -18,7 +18,7 @@
     "pako": "^1.0.10"
   },
   "devDependencies": {
-    "highlight.js": "^9.15.6",
+    "highlight.js": "^10.4.1",
     "html-webpack-plugin": "^3.2.0",
     "nearley": "^2.16.0",
     "node-blockly": "^1.0.36",
